@@ -10,13 +10,13 @@ const Article = () => {
           <Grid container spacing={2}>
             <Grid item xs={12} md={6}>
               <div className="ourworks-title ba">
-                <h3 className="">Our Blogs</h3>
+                <h2>Our Blogs</h2>
                 <h1 className="text-size fw-bold">BLOGS & ARTICLE</h1>
               </div>
             </Grid>
             <Grid item xs={12} md={6}>
               <div className='title-btn'>
-                <button disabled>All Blogs</button>
+                {/* <button disabled>All Blogs</button> */}
               </div>
             </Grid>
           </Grid>
@@ -29,9 +29,9 @@ const Article = () => {
                 <img className='gallery' src="https://i.ibb.co/19XD7hj/photo-1506667527953-22eca67dd919-ixlib-rb-1-2.jpg" alt="" />
               </div>
               <div className='left-article-box-text'>
-                <h1>Explore The New Fashion Trends of 2022</h1> <br />
+                <h1>Explore The New Fashion Trends of 2022.</h1> <br />
                 <small>Jan 01, 2022</small>
-                <p>t's an interesting moment in fashion: We collectively exist somewhere between at-home loungewear and full-on party mode. That intersection calls for both high-shine and raver looks, as well as comfort-minded oversized silhouettes and athleisure finding its way into evening. Next year will be about bold bright bags that indicate a dose of optimism and little skirts and micro jackets that signal we are officially out of hiding. Designers are all about having a good time in 2022 if you are. Chanel is leading the look. Jackets are becoming about the size of our collective patience for this endless pandemic. Lean into a leaner, more tailored silhouette, as at Proenza Schouler, Miu Miu, and Jacquemus. Paired with everything from slim pants to miniskirts, the micro blazer opens up a whole host of new styling opportunities.</p>
+                <p>It's an interesting moment in fashion: We collectively exist somewhere between at-home loungewear and full-on party mode. That intersection calls for both high-shine and raver looks, as well as comfort-minded oversized silhouettes and athleisure finding its way into evening. Next year will be about bold bright bags that indicate a dose of optimism and little skirts and micro jackets that signal we are officially out of hiding. Designers are all about having a good time in 2022 if you are. Chanel is leading the look. Jackets are becoming about the size of our collective patience for this endless pandemic. Lean into a leaner, more tailored silhouette, as at Proenza Schouler, Miu Miu, and Jacquemus. Paired with everything from slim pants to miniskirts, the micro blazer opens up a whole host of new styling opportunities.</p>
                 <button disabled>read more</button>
               </div>
 
@@ -56,7 +56,7 @@ const Article = () => {
                 <img className='gallery' src="https://i.ibb.co/HGHTnvD/photo-1591085686350-798c0f9faa7f-ixlib-rb-1-2.jpg" alt="" />
               </div>
               <div className='left-article-box-text a'>
-                <h1>Follow The Corona Safety Guideline While Shopping</h1> <br />
+                <h1>Follow The Safety Guideline While Shopping</h1> <br />
                 <small>Oct 12, 2021</small>
                 <p>The unprecedented threat from the novel coronavirus pandemic caused by the SARS-CoV-2 virus has compelled most countries to lockdown their cities or hotspots...</p>
                 <button disabled>read more</button>
