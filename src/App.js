@@ -6,6 +6,7 @@ import {
   Route
 } from "react-router-dom";
 import Home from './Pages/Home/Home/Home';
+import Login from './Pages/Home/Login/Login';
 
 
 
@@ -17,6 +18,12 @@ function App() {
           <Route path="/home">
             <Home />
           </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
+        
+
+         
 
           <Route exact path="/">
             <Home />
