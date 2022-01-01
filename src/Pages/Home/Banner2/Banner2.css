@@ -1,5 +1,5 @@
-.header-img1 {
-    background-image: url("https://imgdb.net/storage/uploads/e34154bd815279f320b1bb2e8d859f1c37847c461a0cb007d076b84d454c17e9.jpg"),
+.header-img2 {
+    background-image: url("https://imgdb.net/storage/uploads/8cd149b135f20c61b268c3047af291010b0a2b1efc64a158945db7873a32ea61.jpg"),
       linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
     height: 500px;
     width: 100%;
@@ -14,4 +14,5 @@
   .title {
     color: white;
     padding-top: 60px;
+    padding-right: 10px;
   }
