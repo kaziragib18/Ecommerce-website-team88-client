@@ -15,7 +15,7 @@ export default function NavBar() {
     return (
         <div>
             <h1>this is navbar</h1>
-            <h1>this is navbar22</h1>
+     
         </div>
     )
 }
