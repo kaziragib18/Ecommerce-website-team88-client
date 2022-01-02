@@ -8,13 +8,13 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import Facebook from '@mui/icons-material/Facebook';
 import './Footer.css'
-import { margin } from '@mui/system';
+
 
 export default function Footer() {
    
     return (
         <footer>
-       <Box color='white' px={{xs:3,sm:10}} py={{xs:5,sm:10}} bgcolor='#282828' position='fixed' left='0' bottom='0' right='0' >
+       <Box color='white' px={{xs:3,sm:10}} py={{xs:5,sm:10}} bgcolor='#020202' marginTop='30px' left='0' bottom='0' right='0' >
            <Container maxWidth="lg">
 <Grid container spacing={5} >
 <Grid item x={12} sm={4}>

@@ -29,7 +29,7 @@ let history=useHistory()
 
  
   return (
-<Container maxWidth="xl" sx={{bgcolor:"#282828"}}>
+<Container maxWidth="xl" sx={{bgcolor:"#020202"}}>
         <Toolbar disableGutters>
           <Typography
             variant="h6"
