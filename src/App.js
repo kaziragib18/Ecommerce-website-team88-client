@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import Home from './Pages/Home/Home/Home';
 import Login from './Pages/Home/Login/Login';
+import Explore from './Pages/Home/Explore/Explore';
 
 
 
@@ -22,7 +23,9 @@ function App() {
             <Login />
           </Route>
         
-
+          <Route exact path="/explore">
+            <Explore/>
+          </Route>
          
 
           <Route exact path="/">
