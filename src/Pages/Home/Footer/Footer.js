@@ -1,4 +1,3 @@
-
 import React from 'react'
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
@@ -8,7 +7,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import Facebook from '@mui/icons-material/Facebook';
 import './Footer.css'
-import { margin } from '@mui/system';
+// import { margin } from '@mui/system';
 
 export default function Footer() {
    
