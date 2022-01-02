@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+.subscribe{
+  background-image: linear-gradient(180deg, #0000006E 60%, #020202 100%),url(https://image.freepik.com/free-photo/young-blond-lovely-woman-luxurious-red-dress-with-wide-sleeves-expressive-pose_273443-1734.jpg);
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-size: cover;
+  background-position:center;
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+}
+
+.subscribe-box {
+  text-align: start;
+  color: #fff;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.subscribe-content h2 {
+  font-family: 'Caveat', cursive;
+  color: #e46815;
+  font-size: 2.2rem;
+  margin: 0;
+  font-weight: 500;
+  position: relative;
+  left: 58px;
+}
+
+.subscribe-content h1 {
+  margin: 0;
+  margin-top: 13px;
+  font-size: 50px;
+  color: #d2d0d0;
+
+}
+
+.subscribe-content p {
+  color: #9f9e9e;
+  font-family: 'Poppins', sans-serif;
+}
+
+.subscribe-form form input {
+  font-family: 'Poppins', sans-serif;
+  padding: 18px 154px 15px 24px;
+  font-size: 16px;
+}
+button.subscribe-btn {
+  font-family: 'Poppins', sans-serif;
+  background: #e23801;
+  border: 0;
+  padding: 21px 35px 18px 35px;
+  margin-left: 14px;
+  color: #fff;
+  text-transform: capitalize;
+  font-size: 14px;
+  outline: none;
+}
+.subscribe-content h3:before {
+  content: '';
+  width: 100px;
+  height: 2px;
+  display: block;
+  background: #e23801;
+  position: absolute;
+  left: -120px;
+  top: 13px;
+}
+.subscribe-form {
+  margin-top: 16px;
+}
+
+@media (max-width:768px) {
+
+  .subscribe-content h3 {
+      display: inline-block;
+  }
+  .subscribe-form form input {
+      padding: 14px 0px 12px 14px;
+  }
+  
+  button.subscribe-btn {
+      padding: 17px 10px 15px 10px;
+  
+  }
+  .subscribe-content h1 {
+      margin: 0;
+      margin-top: 13px;
+      font-size: 44px;
+      line-height: 56px;
+      color: #d2d0d0;
+  }
+
+}
