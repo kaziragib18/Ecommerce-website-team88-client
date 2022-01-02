@@ -12,8 +12,9 @@ import Stack from "@mui/material/Stack";
 import Box from "@mui/material/Box";
 
 import { Skeleton } from "@mui/material";
+import { Link } from "react-router-dom";
 const SingleProduct = (props) => {
-  const { image, title, price, discount, discountPrice, rating } = props.pd;
+  const { image, title, price, discount, discountPrice, rating,id } = props.pd;
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     setTimeout(() => {
@@ -22,7 +23,8 @@ const SingleProduct = (props) => {
   }, []);
   return (
     <Grid item xs={4} sm={4} md={4}>
-      {loading ? (
+     <Link style={{textDecoration:"none"}} to={`/productdetails/${id}`}>
+     {loading ? (
         <Box sx={{ ml: 2 }}>
           <Skeleton variant="rectangular" width={315} height={350} />
         </Box>
@@ -73,6 +75,7 @@ const SingleProduct = (props) => {
           <CardActions></CardActions>
         </Card>
       )}
+     </Link>
     </Grid>
   );
 };

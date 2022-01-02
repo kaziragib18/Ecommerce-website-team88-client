@@ -8,12 +8,13 @@ import {
 import Home from './Pages/Home/Home/Home';
 import Login from './Pages/Home/Login/Login';
 import Explore from './Pages/Home/Explore/Explore';
+import ProductDetails from './Pages/Home/Explore/ProductDetails/ProductDetails';
 
 
 
 function App() {
   return (
-    <div className="App">
+    <div className="">
       <Router>
         <Switch>
           <Route path="/home">
@@ -23,8 +24,12 @@ function App() {
             <Login />
           </Route>
         
-          <Route exact path="/explore">
+          <Route  path="/explore">
             <Explore/>
+          </Route>
+         
+          <Route  path="/productdetails/:productid">
+            <ProductDetails/>
           </Route>
          
 
