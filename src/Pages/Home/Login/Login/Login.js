@@ -8,7 +8,10 @@ import useAuth from '../../../../hooks/useAuth';
 
 const Login = () => {
     const [loginData, setLoginData] = useState({});
-    const { user, loginUser, isLoading, authError } = useAuth();
+    const { user, loginUser, isLoading, signInWithGoogle, authError } = useAuth();
+
+    const location = useLocation();
+    const history = useHistory();
 
     const handleOnBlur = e => {
         const field = e.target.name;
@@ -20,9 +23,14 @@ const Login = () => {
         // console.log(field, value);
     }
     const handleLoginSubmit = e => {
-        loginUser(loginData.email, loginData.password,);
+        loginUser(loginData.email, loginData.password, location, history);
         e.preventDefault();
     }
+
+    const handleGoogleSignIn = () => {
+        signInWithGoogle(location, history)
+    }
+
 
     return (
         <>
@@ -83,7 +91,7 @@ const Login = () => {
                             </Typography>
 
                             <Button
-                                //   onClick={handleGoogleSignIn}
+                                onClick={handleGoogleSignIn}
                                 style={{ width: "10%", }} ><img src={googleIcon} style={{ width: "100%" }} alt="google-icon" /></Button>
                         </Grid>
 
