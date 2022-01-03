@@ -14,7 +14,7 @@ import ProductDetails from './Pages/Home/Explore/ProductDetails/ProductDetails';
 
 function App() {
   return (
-    <div className="">
+    <div className="App">
       <Router>
         <Switch>
           <Route path="/home">

@@ -19,7 +19,9 @@ const Explore = () => {
         
       <Box sx={{ mt: 3 }}>
         <Container>
-        <TextField
+       <Box sx={{ textAlign: "center" }}>
+       <TextField
+        
         onChange={(e) => setSearchpd(e.target.value)}
         sx={{
             width: 500,
@@ -30,6 +32,7 @@ const Explore = () => {
         label="Search Product.."
         
       />
+       </Box>
      
        
      
