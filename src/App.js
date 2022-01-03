@@ -17,32 +17,36 @@ function App() {
   return (
     <div className="App">
       <AuthProvider>
-        <Router>
-          <Switch>
-
-            <Route exact path="/">
+      <Router>
+        <Switch>
+        <Route exact path="/">
               <Home />
             </Route>
-
-            <Route path="/home">
-              <Home />
-            </Route>
-
-            <Route path="/login">
-              <Login />
-            </Route>
-
-            <Route path="/register">
+          <Route path="/home">
+            <Home />
+          </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
+          
+          <Route path="/register">
               <Register />
             </Route>
+            <Route  path="/explore">
+            <Explore/>
+          </Route>
+         <Route  path="/productdetails/:productid">
+            <ProductDetails/>
+          </Route>
+         
 
-            <Route path="/explore">
-              <Explore />
-            </Route>
+            
 
-            <Route path="/productdetails/:productid">
-              <ProductDetails />
-            </Route>
+            
+            
+
+            
+            
 
           </Switch>
         </Router>
