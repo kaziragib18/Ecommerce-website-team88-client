@@ -38,14 +38,6 @@ function App() {
          <Route  path="/productdetails/:productid">
             <ProductDetails/>
           </Route>
-         
-
-            
-
-            
-            
-
-            
             
 
           </Switch>
