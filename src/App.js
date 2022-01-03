@@ -6,39 +6,47 @@ import {
   Route
 } from "react-router-dom";
 import Home from './Pages/Home/Home/Home';
-import Login from './Pages/Home/Login/Login';
 import Explore from './Pages/Home/Explore/Explore';
 import ProductDetails from './Pages/Home/Explore/ProductDetails/ProductDetails';
-
+import Login from './Pages/Home/Login/Login/Login';
+import Register from './Pages/Home/Login/Register/Register';
+import AuthProvider from './contexts/AuthProvider/AuthProvider';
 
 
 function App() {
   return (
-    <div className="">
-      <Router>
-        <Switch>
-          <Route path="/home">
-            <Home />
-          </Route>
-          <Route path="/login">
-            <Login />
-          </Route>
-        
-          <Route  path="/explore">
-            <Explore/>
-          </Route>
-         
-          <Route  path="/productdetails/:productid">
-            <ProductDetails/>
-          </Route>
-         
+    <div className="App">
+      <AuthProvider>
+        <Router>
+          <Switch>
 
-          <Route exact path="/">
-            <Home />
-          </Route>
+            <Route exact path="/">
+              <Home />
+            </Route>
 
-        </Switch>
-      </Router>
+            <Route path="/home">
+              <Home />
+            </Route>
+
+            <Route path="/login">
+              <Login />
+            </Route>
+
+            <Route path="/register">
+              <Register />
+            </Route>
+
+            <Route path="/explore">
+              <Explore />
+            </Route>
+
+            <Route path="/productdetails/:productid">
+              <ProductDetails />
+            </Route>
+
+          </Switch>
+        </Router>
+      </AuthProvider>
     </div>
   );
 }

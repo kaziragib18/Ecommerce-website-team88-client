@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
 
 .App {
   font-family: 'Poppins', sans-serif;
-  text-align: center;
+  /* text-align: center; */
 }
-
+/* 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -38,4 +39,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
