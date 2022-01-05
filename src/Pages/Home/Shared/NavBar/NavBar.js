@@ -248,6 +248,9 @@ const list = (anchor) => (
                   sx={{ my: 2, fontFamily: "poppins", fontWeight: "500", fontSize: "16px" }}>Login</Button>
                 </Link>
             }
+             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+           {user?.displayName}
+          </Typography>
           </Box>
 
 
