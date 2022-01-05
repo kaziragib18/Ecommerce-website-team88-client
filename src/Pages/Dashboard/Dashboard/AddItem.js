@@ -61,7 +61,7 @@ export default function AddItem() {
                 <Button style={{ margin: '10px', backgroundColor: '#020202' }} type="submit" variant="contained">Add Product</Button>
               </form>
             </Box>
-            <Box bgcolor='#020202' width="50%" borderRadius={16} boxShadow={3}>
+            <Box bgcolor='#020202' width="50%" borderRadius={16} boxShadow={3} padding='2%'>
                 <h1 style={{color:'#e46815', fontFamily:'cursive'}}>Item Selection</h1>
                 <ul style={{textAlign:'start',color: '#fff',paddingtop: '20px',paddingbottom:'20px',marginLeft:'10px',marginRight:'10px'}}>
                     <li>Solve a customer pain point</li>

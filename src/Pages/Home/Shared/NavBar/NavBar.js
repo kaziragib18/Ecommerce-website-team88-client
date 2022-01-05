@@ -23,6 +23,7 @@ import ListItem from '@material-ui/core/ListItem';
 // import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import './NavBar.css'
+import { Divider } from '@mui/material';
 // import InboxIcon from '@material-ui/icons/MoveToInbox';
 // import MailIcon from '@material-ui/icons/Mail';
 const useStyles = makeStyles({
@@ -42,7 +43,7 @@ const NavBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   let history = useHistory();
 
-  const { user, logOut } = useAuth();
+  const { user, logOut,admin } = useAuth();
 
   const handleOpenNavMenu = (event) => {
 
@@ -78,7 +79,15 @@ const list = (anchor) => (
     onClick={toggleDrawer(anchor, false)}
     onKeyDown={toggleDrawer(anchor, false)}
   >
-    <List  >
+     <Typography variant="h6" component="div"  sx={{ fontFamily: "poppins", fontWeight: "500", fontSize: "16px",color:'wheat',marginTop:'1.375rem',marginLeft:'1.375rem' }}>
+           {user?.displayName}
+          </Typography>
+     <Typography variant="h6" component="div"  sx={{ fontFamily: "poppins", fontWeight: "500", fontSize: "16px",color:'gray',marginTop:'1.375rem',marginLeft:'1.375rem' }}>
+           {user?.email}
+          </Typography>
+          <Divider sx={{color:'whitesmoke',marginTop:'20px'}}/>
+  { admin &&
+   <List  >
       
         <ListItem button onClick={()=>{
            history.push('/addItem')
@@ -90,13 +99,13 @@ const list = (anchor) => (
            history.push('/manage_order')
         }}>
           {/* <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon> */}
-          <ListItemText className='drawer-text'  primary={'Manage order'} />
+          {/* <ListItemText className='drawer-text'  primary={'Manage order'} />
         </ListItem>
         <ListItem button onClick={()=>{
            history.push('/manage_product')
         }}>
         
-          <ListItemText className='drawer-text'  primary={'Manage Product'} />
+          <ListItemText className='drawer-text'  primary={'Manage Product'} /> */}
         </ListItem>
         <ListItem button onClick={()=>{
            history.push('/myorders')
@@ -115,8 +124,29 @@ const list = (anchor) => (
           <ListItemText className='drawer-text'  primary={'Make Review'} />
         </ListItem>
      
-    </List>
-    
+    </List>}
+    { !admin &&
+   <List  >
+      
+       
+        <ListItem button onClick={()=>{
+           history.push('/myorders')
+        }}>
+          
+          <ListItemText className='drawer-text'  primary={'My orders'} />
+        </ListItem>
+       
+        <ListItem button onClick={()=>{
+           history.push('/review')
+        }}>
+          <ListItemText className='drawer-text'  primary={'Make Review'} />
+        </ListItem>
+     
+    </List>}
+    <Box>
+                  <Button onClick={logOut} color="inherit"
+                    sx={{ my: 2, color: "#b71c1c", fontFamily: "poppins", fontWeight: "500", fontSize: "16px",marginLeft:'1.375rem' }}>Logout</Button>
+                </Box>
   
   </div>
 );
@@ -130,7 +160,7 @@ const list = (anchor) => (
             component="div"
             sx={{ color:'white',mr: 2, display: { xs: 'none', md: 'flex' } }}
           >
-            LOGO
+            LAVISH
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -198,7 +228,7 @@ const list = (anchor) => (
             component="div"
             sx={{ color:'white',flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
           >
-            LOGO
+            LAVISH
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
           <Box sx={{flexGrow: 1, display: { xs: 'none', md: 'flex'},marginLeft:'30%'}}>
@@ -236,7 +266,7 @@ const list = (anchor) => (
         </React.Fragment>
       ))}
           </Box>
-          <Box>
+          <Box style={{display:'flex'}}>
             {
               user?.email ?
                 <Box>
@@ -248,7 +278,7 @@ const list = (anchor) => (
                   sx={{ my: 2, fontFamily: "poppins", fontWeight: "500", fontSize: "16px" }}>Login</Button>
                 </Link>
             }
-             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+             <Typography variant="h6" component="div"  sx={{ fontFamily: "poppins", fontWeight: "500", fontSize: "16px",color:'wheat',marginTop:'1.375rem' }}>
            {user?.displayName}
           </Typography>
           </Box>

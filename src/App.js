@@ -15,6 +15,8 @@ import PrivateRoute from './Pages/Home/Login/PrivateRoute/PrivateRoute';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import Review from './Pages/Dashboard/Dashboard/Review/Review';
 import MakeAdmin from './Pages/Dashboard/Dashboard/MakeAdmin'
+import AddItem from './Pages/Dashboard/Dashboard/AddItem';
+import AdminRoute from './Pages/Home/Login/AdminRoute/AdminRoute';
 
 
 function App() {
@@ -58,10 +60,13 @@ function App() {
             <Route path="/review">
               <Review />
             </Route>
+            <AdminRoute path="/addItem">
+              <AddItem />
+            </AdminRoute>
 
-            <Route path="/makeAdmin">
+            <AdminRoute path="/makeAdmin">
               <MakeAdmin />
-            </Route>
+            </AdminRoute>
 
 
 
