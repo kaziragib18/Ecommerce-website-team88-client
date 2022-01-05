@@ -11,6 +11,8 @@ import ProductDetails from './Pages/Home/Explore/ProductDetails/ProductDetails';
 import Login from './Pages/Home/Login/Login/Login';
 import Register from './Pages/Home/Login/Register/Register';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
+import Review from './Pages/Dashboard/Dashboard/Review/Review';
+
 
 
 function App() {
@@ -34,6 +36,9 @@ function App() {
             </Route>
             <Route  path="/explore">
             <Explore/>
+          </Route>
+            <Route  path="/review">
+            <Review/>
           </Route>
          <Route  path="/productdetails/:productid">
             <ProductDetails/>
