@@ -1,6 +1,7 @@
 import { Alert, Button, Paper, TextField } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { useState } from 'react';
+import NavBar from '../../Home/Shared/NavBar/NavBar';
 export default function MakeAdmin() {
 
     const [email, setEmail] = useState('');
@@ -32,6 +33,8 @@ export default function MakeAdmin() {
     }
 
     return (
+        <>
+        <NavBar></NavBar>
         <div style={{ display: "flex", alignItems: "center", justifyContent: "center", paddingTop: "50px" }}>
             <Paper elevation={16}>
                 <Box
@@ -71,5 +74,7 @@ export default function MakeAdmin() {
                 </Alert>}
             </Paper>
         </div>
+       </>
     )
+    
 }
