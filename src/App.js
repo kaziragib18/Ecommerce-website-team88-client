@@ -53,10 +53,6 @@ function App() {
               <ProductDetails />
             </PrivateRoute>
 
-            <Route path="/explore">
-              <Explore />
-            </Route>
-
             <Route path="/review">
               <Review />
             </Route>
