@@ -12,12 +12,9 @@ import Login from './Pages/Home/Login/Login/Login';
 import Register from './Pages/Home/Login/Register/Register';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
 import PrivateRoute from './Pages/Home/Login/PrivateRoute/PrivateRoute';
-<<<<<<< HEAD
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
-=======
 import Review from './Pages/Dashboard/Dashboard/Review/Review';
-
->>>>>>> 0451dde96760c5363418b15b683d1bdd6dcf53a6
+import MakeAdmin from './Pages/Dashboard/Dashboard/MakeAdmin'
 
 
 function App() {
@@ -29,9 +26,11 @@ function App() {
             <Route exact path="/">
               <Home />
             </Route>
+
             <Route path="/home">
               <Home />
             </Route>
+
             <Route path="/login">
               <Login />
             </Route>
@@ -39,12 +38,15 @@ function App() {
             <Route path="/register">
               <Register />
             </Route>
+
             <Route path="/explore">
               <Explore />
             </Route>
+
             <PrivateRoute path="/dashboard">
-              <Dashboard/>
+              <Dashboard />
             </PrivateRoute>
+
             <PrivateRoute path="/productdetails/:productid">
               <ProductDetails />
             </PrivateRoute>
@@ -52,12 +54,15 @@ function App() {
             <Route path="/explore">
               <Explore />
             </Route>
+
             <Route path="/review">
               <Review />
             </Route>
-            <Route path="/productdetails/:productid">
-              <ProductDetails />
+
+            <Route path="/makeAdmin">
+              <MakeAdmin />
             </Route>
+
 
 
           </Switch>
