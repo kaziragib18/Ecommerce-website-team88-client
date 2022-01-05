@@ -113,7 +113,7 @@ console.log(productid)
             </span>
           </div>
           <button className="btn1 me-2">Add to Cart</button>
-          <Link to="/cart">
+          <Link to={`/cart/${product._id}`}>
             <button className=" btn2 me-2">Check Your Cart</button>
           </Link>
         </div>
