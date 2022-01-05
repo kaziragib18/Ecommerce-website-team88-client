@@ -3,6 +3,7 @@ import AddItem from '../../Dashboard/Dashboard/AddItem';
 import Article from '../Article/Article';
 import Banner1 from '../Banner1/Banner1';
 import Banner2 from '../Banner2/Banner2';
+import FeaturesProducts from '../FeaturesProduct/FeaturesProducts';
 import NewsLetter from '../Newsletter/Newsletter';
 import Footer from '../Shared/Footer/Footer'
 import NavBar from '../Shared/NavBar/NavBar';
@@ -14,6 +15,7 @@ const Home = () => {
     <div>
       <NavBar />
       <Banner1 />
+      <FeaturesProducts/>
       <Banner2 />
       <NewsLetter />
       <Article />
