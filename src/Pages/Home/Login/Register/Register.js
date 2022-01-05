@@ -27,7 +27,7 @@ const Register = () => {
       alert('Your password did not match');
       return
     }
-    registerUser(loginData.email, loginData.password, history);
+    registerUser(loginData.email, loginData.password, loginData.name, history);
     e.preventDefault();
   }
 
@@ -43,16 +43,16 @@ const Register = () => {
 
               {!isLoading &&
                 <form>
-                  {/* <TextField
-                  required
-                  sx={{ width: '75%', m: 1, fontStyle: 'italic' }}
-                  id="standard-basic"
-                  label="Name"
-                  type="name"
-                  name="name"
-                  onBlur={handleOnBlur}
-                  variant="standard"
-                /> */}
+                  <TextField
+                    required
+                    sx={{ width: '75%', m: 1, fontStyle: 'italic' }}
+                    id="standard-basic"
+                    label="Name"
+                    type="name"
+                    name="name"
+                    onBlur={handleOnBlur}
+                    variant="standard"
+                  />
                   <TextField
                     required
                     sx={{ width: '75%', m: 1, fontStyle: 'italic' }}

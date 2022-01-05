@@ -7,6 +7,7 @@ import { Rating, Stack } from "@mui/material";
 import currencyFormatter from "currency-formatter";
 import { BsDash, BsPlus } from "react-icons/bs";
 import "./Productdetails.css";
+import NavBar from "../../Shared/NavBar/NavBar";
 
 const ProductDetails = () => {
   const { productid } = useParams();
@@ -119,6 +120,7 @@ const ProductDetails = () => {
 
   return (
     <>
+      <NavBar />
       <div className="container">
         <div className="row">{loading ? <Loading /> : <Allproducts />}</div>
       </div>
