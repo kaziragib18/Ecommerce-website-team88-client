@@ -12,12 +12,9 @@ import Login from './Pages/Home/Login/Login/Login';
 import Register from './Pages/Home/Login/Register/Register';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
 import PrivateRoute from './Pages/Home/Login/PrivateRoute/PrivateRoute';
-<<<<<<< HEAD
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
-=======
 import Review from './Pages/Dashboard/Dashboard/Review/Review';
 
->>>>>>> 0451dde96760c5363418b15b683d1bdd6dcf53a6
 
 
 function App() {
