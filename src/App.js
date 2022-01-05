@@ -12,6 +12,8 @@ import Login from './Pages/Home/Login/Login/Login';
 import Register from './Pages/Home/Login/Register/Register';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
 import PrivateRoute from './Pages/Home/Login/PrivateRoute/PrivateRoute';
+import Review from './Pages/Dashboard/Dashboard/Review/Review';
+
 
 
 function App() {
@@ -39,6 +41,16 @@ function App() {
             <PrivateRoute path="/productdetails/:productid">
               <ProductDetails />
             </PrivateRoute>
+
+            <Route path="/explore">
+              <Explore />
+            </Route>
+            <Route path="/review">
+              <Review />
+            </Route>
+            <Route path="/productdetails/:productid">
+              <ProductDetails />
+            </Route>
 
 
           </Switch>
