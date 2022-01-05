@@ -2,7 +2,7 @@ import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import Data from "../Data.json";
+// import Data from "../Data.json";
 import { Rating, Stack } from "@mui/material";
 import currencyFormatter from "currency-formatter";
 import { BsDash, BsPlus } from "react-icons/bs";
@@ -11,19 +11,21 @@ import NavBar from "../../Shared/NavBar/NavBar";
 
 const ProductDetails = () => {
   const { productid } = useParams();
+  const[newProducts, setNewProduct]=useState([]);
   const [product, setProduct] = useState({});
   const [quantity, setQuantity] = useState(1);
-  const {
-    id,
-    image,
-    title,
-    category,
-    price,
-    rating,
-    discountPrice,
-    description,
-  } = product;
-  const allproduct = Data;
+  
+
+  
+  useEffect(()=>{
+    fetch('http://localhost:5000/products')
+    .then(res=>res.json())
+    .then(data=>setNewProduct(data))
+    console.log(newProducts)
+    
+},[])
+console.log(productid)
+  // const allproduct = Data;
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     setTimeout(() => {
@@ -31,19 +33,21 @@ const ProductDetails = () => {
     }, 2000);
   }, []);
   useEffect(() => {
-    const selectedProduct = allproduct.find(
-      (pd) => pd.id === parseInt(productid)
+    const selectedProduct = newProducts.find(
+      (pd) => pd._id ===(productid)
     );
     setProduct(selectedProduct);
-    console.log(product);
-  }, [product]);
+    console.log(selectedProduct);
+  }, [newProducts]);
 
   const decriment = () => {
     if (quantity > 1) {
       setQuantity(quantity - 1);
     }
   };
-
+  console.log(product)
+ 
+ 
   const Loading = () => {
     return (
       <>
@@ -72,19 +76,19 @@ const ProductDetails = () => {
             className=""
             height="300px"
             width="350px"
-            src={image}
-            alt={title}
+           src={product.image}
+            alt={product.title}
           />
         </div>
         <div className="col-md-6 my-5">
-          <h4 className="text-uppercase text-dark-50 ">{category}</h4>
-          <h1 className="display-7">{title}</h1>
+          <h4 className="text-uppercase text-dark-50 ">{product.category}</h4>
+          <h1 className="display-7"></h1>
           <p className="lead">
-            Rating:{rating?.rate}
+            Rating:{product.rating?.rate}
             <Stack spacing={1}>
-              <Rating
+              <Rating 
                 name="half-rating-read"
-                defaultValue={rating.rate}
+                defaultValue={product.rating?.rate}
                 precision={0.5}
                 readOnly
               />
@@ -93,13 +97,13 @@ const ProductDetails = () => {
           <div>
             <span>Price:</span>
             <span className="text-decoration-line-through">
-              {currencyFormatter.format(price, { code: "USD" })}
+              {currencyFormatter.format(product.price, { code: "USD" })}
             </span>
           </div>
           <h3 className="display-6 fw-bold">
-            {currencyFormatter.format(discountPrice, { code: "USD" })}
+            {currencyFormatter.format(product.discountPrice, { code: "USD" })}
           </h3>
-          <p className="lead">{description?.substring(0, 120)}</p>
+          <p className="lead">{product.description?.substring(0, 120)}</p>
           <div className="dec_in_quantity">
             <span onClick={decriment} className="dec">
               <BsDash />

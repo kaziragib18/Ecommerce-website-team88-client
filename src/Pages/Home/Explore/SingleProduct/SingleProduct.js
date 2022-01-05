@@ -14,7 +14,7 @@ import Box from "@mui/material/Box";
 import { Skeleton } from "@mui/material";
 import { Link } from "react-router-dom";
 const SingleProduct = (props) => {
-  const { image, title, price, discount, discountPrice, rating, id } = props.pd;
+  const { image, title, price, discount, discountPrice, rating, _id, id } = props.pd;
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     setTimeout(() => {
@@ -23,7 +23,7 @@ const SingleProduct = (props) => {
   }, []);
   return (
     <Grid item xs={4} sm={4} md={4}>
-      <Link style={{ textDecoration: "none" }} to={`/productdetails/${id}`}>
+      <Link style={{ textDecoration: "none" }} to={`/productdetails/${_id}`}>
         {loading ? (
           <Box >
             <Skeleton sx={{ minWidth: 300, minHeight: 350 }} variant="rectangular" />

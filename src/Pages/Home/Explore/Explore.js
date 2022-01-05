@@ -1,17 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { experimentalStyled as styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
-
 import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
 import SingleProduct from "./SingleProduct/SingleProduct";
-import Data from "./Data.json";
+// import Data from "./Data.json";
 import { TextField } from "@mui/material";
 import NavBar from '../../Home/Shared/NavBar/NavBar'
 
 const Explore = () => {
   const [searchpd, setSearchpd] = useState(" ");
-
+  const[products, setProducts]=useState([])
+  useEffect(()=>{
+    fetch('http://localhost:5000/products')
+    .then(res=>res.json())
+    .then(data=>setProducts(data))
+},[])
 
 
   return (
@@ -43,7 +47,7 @@ const Explore = () => {
               spacing={{ xs: 2, md: 3 }}
               columns={{ xs: 4, sm: 8, md: 12 }}
             >
-              {Data.filter((val) => {
+              {products.filter((val) => {
                 if (searchpd === "") {
                   return val
                 }
