@@ -109,6 +109,11 @@ const list = (anchor) => (
         }}>
           <ListItemText className='drawer-text'  primary={'Make Admin'} />
         </ListItem>
+        <ListItem button onClick={()=>{
+           history.push('/review')
+        }}>
+          <ListItemText className='drawer-text'  primary={'Make Review'} />
+        </ListItem>
      
     </List>
     
