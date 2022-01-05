@@ -9,6 +9,7 @@ const useFirebase = () => {
   const [user, setUser] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [authError, setAuthError] = useState('');
+  const [admin, setAdmin] = useState(false);
 
 
   const auth = getAuth();
@@ -21,6 +22,8 @@ const useFirebase = () => {
         setAuthError('');
         const newUser = { email, displayName: name };
         setUser(newUser);
+        //save user data in mongodb
+        saveUser(email, name, 'POST');
 
         // send name to firebase after resgistration
         updateProfile(auth.currentUser, {
@@ -57,7 +60,7 @@ const useFirebase = () => {
     signInWithPopup(auth, googleProvider)
       .then((result) => {
         const user = result.user;
-        // saveUser(user.email, user.displayName, 'PUT');
+        saveUser(user.email, user.displayName, 'PUT');
         setAuthError('');
         //redirect
         const destination = location?.state?.from || '/';
@@ -84,6 +87,14 @@ const useFirebase = () => {
   }, [auth])
 
 
+  useEffect(() => {
+    fetch(`https://cryptic-plains-35102.herokuapp.com/users/${user.email}`)
+      .then(res => res.json())
+      .then(data => setAdmin(data.admin))
+  }, [user.email])
+
+
+
   const logOut = () => {
 
     signOut(auth).then(() => {
@@ -95,8 +106,22 @@ const useFirebase = () => {
 
   }
 
+  const saveUser = (email, displayName, method) => {
+    const user = { email, displayName };
+    fetch('https://cryptic-plains-35102.herokuapp.com/users', {
+      method: method,
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(user)
+    })
+      .then()
+  }
+
+
   return {
     user,
+    admin,
     isLoading,
     authError,
     registerUser,

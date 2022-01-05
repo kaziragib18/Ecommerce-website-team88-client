@@ -14,8 +14,9 @@ import AuthProvider from './contexts/AuthProvider/AuthProvider';
 import PrivateRoute from './Pages/Home/Login/PrivateRoute/PrivateRoute';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import Review from './Pages/Dashboard/Dashboard/Review/Review';
-
-
+import MakeAdmin from './Pages/Dashboard/Dashboard/MakeAdmin'
+import AddItem from './Pages/Dashboard/Dashboard/AddItem';
+import AdminRoute from './Pages/Home/Login/AdminRoute/AdminRoute';
 
 
 function App() {
@@ -27,9 +28,11 @@ function App() {
             <Route exact path="/">
               <Home />
             </Route>
+
             <Route path="/home">
               <Home />
             </Route>
+
             <Route path="/login">
               <Login />
             </Route>
@@ -37,12 +40,15 @@ function App() {
             <Route path="/register">
               <Register />
             </Route>
+
             <Route path="/explore">
               <Explore />
             </Route>
+
             <PrivateRoute path="/dashboard">
-              <Dashboard/>
+              <Dashboard />
             </PrivateRoute>
+
             <PrivateRoute path="/productdetails/:productid">
               <ProductDetails />
             </PrivateRoute>
@@ -52,12 +58,18 @@ function App() {
             <Route path="/explore">
               <Explore />
             </Route>
+
             <Route path="/review">
               <Review />
             </Route>
-            <Route path="/productdetails/:productid">
-              <ProductDetails />
-            </Route>
+            <AdminRoute path="/addItem">
+              <AddItem />
+            </AdminRoute>
+
+            <AdminRoute path="/makeAdmin">
+              <MakeAdmin />
+            </AdminRoute>
+
 
 
           </Switch>

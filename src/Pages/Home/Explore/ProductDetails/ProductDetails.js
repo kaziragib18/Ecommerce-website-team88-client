@@ -15,10 +15,9 @@ const ProductDetails = () => {
   const [product, setProduct] = useState({});
   const [quantity, setQuantity] = useState(1);
   
-
   
   useEffect(()=>{
-    fetch('http://localhost:5000/products')
+    fetch('https://cryptic-plains-35102.herokuapp.com/products')
     .then(res=>res.json())
     .then(data=>setNewProduct(data))
     console.log(newProducts)
